@@ -76,6 +76,7 @@ editor.start();
 ```
 
 ## Sample URL
+https://joontop.github.io/joontop-editor/sample/
 
 ## License
 MIT
