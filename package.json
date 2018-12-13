@@ -1,0 +1,37 @@
+{
+  "name": "joontop-editor",
+  "version": "1.0.0",
+  "description": "Hash & Mention Editor",
+  "main": "lib/index.js",
+  "author": "joontop",
+  "license": "ISC",
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack --mode production --watch",
+    "dev": "webpack-dev-server --open --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joontop/joontop-editor.git"
+  },
+  "email": "zoontop@naver.com",
+  "keywords": [
+    "hash",
+    "hashtag",
+    "mention",
+    "editor"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/plugin-transform-object-assign": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "babel-loader": "^8.0.4",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.9"
+  },
+  "dependencies": {
+    "npm": "^6.4.1"
+  }
+}

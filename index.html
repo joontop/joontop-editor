@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+    <title>Editor</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+            line-height: 1.5em;
+            font-family: sans-serif;
+        }
+
+        body {
+            padding: 10px;
+        }
+
+        .editor {
+            width: 100%;
+            height: 200px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .hash {
+            background-color: #fcc;
+
+        }
+
+        .mention {
+            background-color: #3cf;
+        }
+
+        .__layer {
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+
+        .__layer div {
+            padding: 5px 10px;
+            color: #000;
+            border-top: 1px solid #f1f1f1;
+            background-color: #fff;
+            -webkit-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .__layer div:first-child {
+            border-top: 0;
+        }
+
+        .__layer div.on {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+<div class="editor">
+</div>
+<script src="/lib/index.js"></script>
+</body>
+</html>
