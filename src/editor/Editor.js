@@ -56,6 +56,7 @@ export default class Editor {
   }
   onKeydownEvent(e) {
     let _keyCode = e.which || e.keyCode;
+    let chCode = e.key.charCodeAt(0);
     this.selection = window.getSelection();
     if (this.selection.rangeCount <= 0) {
       return;
@@ -106,7 +107,10 @@ export default class Editor {
       this.onPressSpacebarKey(e);
     } else if (_keyCode === CONFIG.KEYCODE.ENTER) {
       this.onPressEnterKey(e);
-    } else if (e.shiftKey && _keyCode === CONFIG.KEYCODE.HASHTAG) {
+    } else if (
+      (e.shiftKey && _keyCode === CONFIG.KEYCODE.HASHTAG) ||
+      chCode === 35
+    ) {
       this.onPressHashKey(e);
     } else if (e.shiftKey && _keyCode === CONFIG.KEYCODE.MENTION) {
       this.onPressMentionKey(e);
@@ -237,7 +241,7 @@ export default class Editor {
     } else if (
       this.range.commonAncestorContainer.parentNode.parentNode &&
       this.range.commonAncestorContainer.parentNode.parentNode.nodeName ===
-      'DIV'
+        'DIV'
     ) {
       _wrapper = this.range.commonAncestorContainer.parentNode.parentNode;
       _childNodes = this.range.commonAncestorContainer.parentNode.parentNode
@@ -457,7 +461,9 @@ export default class Editor {
       } else if (_keyCode === CONFIG.KEYCODE.ENTER) {
         this.autoTarget.innerHTML =
           this.state.currentTag +
-          this.layer.querySelectorAll('.' + Options.getLayerDataClass())[this.layerState.idx].innerHTML;
+          this.layer.querySelectorAll('.' + Options.getLayerDataClass())[
+            this.layerState.idx
+          ].innerHTML;
         window.getSelection().selectAllChildren(this.autoTarget);
         this.selection.removeAllRanges();
         this.range.setStartAfter(this.autoTarget);
@@ -473,7 +479,9 @@ export default class Editor {
   }
   resetLayer() {
     if (this.layer) {
-      let datas = this.layer.querySelectorAll('.' + Options.getLayerDataClass());
+      let datas = this.layer.querySelectorAll(
+        '.' + Options.getLayerDataClass()
+      );
       for (let i = 0, j = datas.length; i < j; i++) {
         datas[i].classList.remove('on');
       }
