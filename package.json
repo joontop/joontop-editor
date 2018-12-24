@@ -1,6 +1,6 @@
 {
   "name": "joontop-editor",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Hash & Mention Editor",
   "main": "lib/index.js",
   "author": "joontop",

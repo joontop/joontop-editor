@@ -112,7 +112,10 @@ export default class Editor {
       chCode === 35
     ) {
       this.onPressHashKey(e);
-    } else if (e.shiftKey && _keyCode === CONFIG.KEYCODE.MENTION) {
+    } else if (
+      (e.shiftKey && _keyCode === CONFIG.KEYCODE.MENTION) ||
+      chCode === 64
+    ) {
       this.onPressMentionKey(e);
     }
   }
